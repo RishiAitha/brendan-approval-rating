@@ -46,10 +46,10 @@
 
     const ratingDocRef = doc(db, "data", "rating")
 
-    let rating = 0.5;
+    let rating = 50;
 
-    function increaseRating() {updateRating(rating + 0.01)};
-    function decreaseRating() {updateRating(rating - 0.01)};
+    function increaseRating() {updateRating(rating + 1)};
+    function decreaseRating() {updateRating(rating - 1)};
 
     async function loadRating() {
         const docSnapshot = await getDoc(ratingDocRef);
@@ -64,18 +64,18 @@
     }
 
     function updateRating(newRating) {
-        if (newRating > 0.8) {
+        if (newRating > 80) {
             document.querySelector('.rating-display').style.color = 'green';
-        } else if (newRating < 0.2) {
+        } else if (newRating < 20) {
             document.querySelector('.rating-display').style.color = 'red';
         } else {
             document.querySelector('.rating-display').style.color = 'black';
         }
-        if (newRating <= 1 && newRating >= 0) {
+        if (newRating <= 100 && newRating >= 0) {
             rating = newRating;
             saveRating(rating);
         }
-        document.querySelector('.rating-display').textContent = `${Math.trunc(rating * 100)}%`;
+        document.querySelector('.rating-display').textContent = `${rating}%`;
     }
 
     document.getElementById('increase-btn').addEventListener('click', increaseRating);
