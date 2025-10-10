@@ -64,9 +64,9 @@
     }
 
     function updateRating(newRating) {
-        if (newRating > 80) {
+        if (newRating >= 80) {
             document.querySelector('.rating-display').style.color = 'green';
-        } else if (newRating < 20) {
+        } else if (newRating <= 20) {
             document.querySelector('.rating-display').style.color = 'red';
         } else {
             document.querySelector('.rating-display').style.color = 'black';
