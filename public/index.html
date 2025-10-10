@@ -71,7 +71,7 @@
         } else {
             document.querySelector('.rating-display').style.color = 'black';
         }
-        if (newRating <= 1 || newRating >= 0) {
+        if (newRating <= 1 && newRating >= 0) {
             rating = newRating;
             saveRating(rating);
         }
