@@ -7,8 +7,8 @@
 <body>
   <h1>How cool is Brendan:</h1>
   <h2 class="rating-display"></h2>
-  <button id="increase-btn">Increase Brendan's Rating</button>
-  <button id="decrease-btn">Decrease Brendan's Rating</button>
+  <!--<button id="increase-btn">Increase Brendan's Rating</button>
+  <button id="decrease-btn">Decrease Brendan's Rating</button>-->
   <script type="module">
     // Import the functions you need from the SDKs you need
 
@@ -75,11 +75,12 @@
             rating = newRating;
             saveRating(rating);
         }
-        document.querySelector('.rating-display').textContent = `${rating}%`;
+        //document.querySelector('.rating-display').textContent = `${rating}%`;
+        document.querySelector('.rating-display').textContent = `No more ratings :(`;
     }
 
-    document.getElementById('increase-btn').addEventListener('click', increaseRating);
-    document.getElementById('decrease-btn').addEventListener('click', decreaseRating);
+    //document.getElementById('increase-btn').addEventListener('click', increaseRating);
+    //document.getElementById('decrease-btn').addEventListener('click', decreaseRating);
 
     loadRating();
   </script>
